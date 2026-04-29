@@ -1,0 +1,11 @@
+name: "Matter TDBU Window Covering"
+packageKey: "matter-tdbu-window-covering"
+permissions:
+  matter: {}
+description: >
+  SmartThings Edge Driver for SmartWings TDBU (Top-Down Bottom-Up) Matter over Thread
+  window covering devices. Supports independent dual-motor control via Matter
+  WindowCovering cluster multi-endpoint architecture. Battery-powered end device support.
+  V1.6: Fixed SmartWings Levitate with DUCTECH (VendorID 0x141F / PID 0x1002) showing
+  only one rail. Corrected fingerprint to use TDBU dual-component profile directly.
+vendorSupportInformation: "https://support.smartthings.com"

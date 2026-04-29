@@ -1,0 +1,216 @@
+matterManufacturer:
+# ================================================================
+# SmartWings (vendorId: 0x146F = 5231)
+#
+# Matter 认证 PID 对照（来源：SmartWings 官方确认）：
+#   0x100B (4107) -> TDBU 双电机窗帘  -> 加载 TDBU 双滑块 Profile
+#   其余 PID      -> 单电机窗帘       -> 加载单滑块 Profile
+#
+# 驱动在 do_configure 阶段仍会进行运行时端点数量检测作为双重保险：
+#   - 检测到 >=2 个 WindowCovering 端点 -> 确认为 TDBU
+#   - 检测到 1 个 WindowCovering 端点   -> 回退为单电机 Profile
+# ================================================================
+
+# ----------------------------------------------------------------
+# TDBU 双电机产品（Matter 认证 PID: 0x100B）
+# ----------------------------------------------------------------
+  - id: "5231/4107"
+    deviceLabel: SmartWings TDBU Window Covering
+    vendorId: 0x146F
+    productId: 0x100B
+    deviceProfileName: window-covering-tdbu-battery
+
+# ----------------------------------------------------------------
+# 单电机产品（其余 PID，加载单滑块 Profile）
+# ----------------------------------------------------------------
+
+# PID 0x1001
+  - id: "5231/4097"
+    deviceLabel: SmartWings Window Covering
+    vendorId: 0x146F
+    productId: 0x1001
+    deviceProfileName: window-covering-battery
+
+# PID 0x1002
+  - id: "5231/4098"
+    deviceLabel: SmartWings Window Covering
+    vendorId: 0x146F
+    productId: 0x1002
+    deviceProfileName: window-covering-battery
+
+# PID 0x1003
+  - id: "5231/4099"
+    deviceLabel: SmartWings Window Covering
+    vendorId: 0x146F
+    productId: 0x1003
+    deviceProfileName: window-covering-battery
+
+# PID 0x1004
+  - id: "5231/4100"
+    deviceLabel: SmartWings Window Covering
+    vendorId: 0x146F
+    productId: 0x1004
+    deviceProfileName: window-covering-battery
+
+# PID 0x1005
+  - id: "5231/4101"
+    deviceLabel: SmartWings Window Covering
+    vendorId: 0x146F
+    productId: 0x1005
+    deviceProfileName: window-covering-battery
+
+# PID 0x1006
+  - id: "5231/4102"
+    deviceLabel: SmartWings Window Covering
+    vendorId: 0x146F
+    productId: 0x1006
+    deviceProfileName: window-covering-battery
+
+# PID 0x1007
+  - id: "5231/4103"
+    deviceLabel: SmartWings Window Covering
+    vendorId: 0x146F
+    productId: 0x1007
+    deviceProfileName: window-covering-battery
+
+# PID 0x1008
+  - id: "5231/4104"
+    deviceLabel: SmartWings Window Covering
+    vendorId: 0x146F
+    productId: 0x1008
+    deviceProfileName: window-covering-battery
+
+# PID 0x1009
+  - id: "5231/4105"
+    deviceLabel: SmartWings Window Covering
+    vendorId: 0x146F
+    productId: 0x1009
+    deviceProfileName: window-covering-battery
+
+# PID 0x100A
+  - id: "5231/4106"
+    deviceLabel: SmartWings Window Covering
+    vendorId: 0x146F
+    productId: 0x100A
+    deviceProfileName: window-covering-battery
+
+# PID 0x100C（预留，如有新单电机产品）
+  - id: "5231/4108"
+    deviceLabel: SmartWings Window Covering
+    vendorId: 0x146F
+    productId: 0x100C
+    deviceProfileName: window-covering-battery
+
+# ================================================================
+# DUCTECH (vendorId: 0x141F = 5151)
+#
+# SmartWings Levitate with DUCTECH 系列产品
+#
+# 已确认设备：
+#   0x1002 (4098) -> SmartWings Levitate with DUCTECH
+#                    该设备为 TDBU 双电机窗帘（Endpoint 1 = Top, Endpoint 2 = Bottom）
+#                    必须使用 TDBU 双滑块 Profile，否则只显示单轨
+#
+# PID 规则（参照 SmartWings 0x146F 系列）：
+#   0x100B -> TDBU 双电机 -> window-covering-tdbu-battery
+#   其余   -> 单电机      -> window-covering-battery
+#   注意：DUCTECH 0x1002 已确认为 TDBU，故单独映射为 TDBU profile
+# ================================================================
+
+# ----------------------------------------------------------------
+# TDBU 双电机产品
+# ----------------------------------------------------------------
+
+# PID 0x1002（已确认：SmartWings Levitate with DUCTECH，TDBU 双电机）
+  - id: "5151/4098"
+    deviceLabel: SmartWings Levitate with DUCTECH
+    vendorId: 0x141F
+    productId: 0x1002
+    deviceProfileName: window-covering-tdbu-battery
+
+# PID 0x100B（TDBU 双电机，与 SmartWings 系列规则一致）
+  - id: "5151/4107"
+    deviceLabel: SmartWings Levitate TDBU with DUCTECH
+    vendorId: 0x141F
+    productId: 0x100B
+    deviceProfileName: window-covering-tdbu-battery
+
+# ----------------------------------------------------------------
+# 单电机产品（其余 PID）
+# ----------------------------------------------------------------
+
+# PID 0x1001
+  - id: "5151/4097"
+    deviceLabel: SmartWings Levitate with DUCTECH
+    vendorId: 0x141F
+    productId: 0x1001
+    deviceProfileName: window-covering-battery
+
+# PID 0x1003
+  - id: "5151/4099"
+    deviceLabel: SmartWings Levitate with DUCTECH
+    vendorId: 0x141F
+    productId: 0x1003
+    deviceProfileName: window-covering-battery
+
+# PID 0x1004
+  - id: "5151/4100"
+    deviceLabel: SmartWings Levitate with DUCTECH
+    vendorId: 0x141F
+    productId: 0x1004
+    deviceProfileName: window-covering-battery
+
+# PID 0x1005
+  - id: "5151/4101"
+    deviceLabel: SmartWings Levitate with DUCTECH
+    vendorId: 0x141F
+    productId: 0x1005
+    deviceProfileName: window-covering-battery
+
+# PID 0x1006
+  - id: "5151/4102"
+    deviceLabel: SmartWings Levitate with DUCTECH
+    vendorId: 0x141F
+    productId: 0x1006
+    deviceProfileName: window-covering-battery
+
+# PID 0x1007
+  - id: "5151/4103"
+    deviceLabel: SmartWings Levitate with DUCTECH
+    vendorId: 0x141F
+    productId: 0x1007
+    deviceProfileName: window-covering-battery
+
+# PID 0x1008
+  - id: "5151/4104"
+    deviceLabel: SmartWings Levitate with DUCTECH
+    vendorId: 0x141F
+    productId: 0x1008
+    deviceProfileName: window-covering-battery
+
+# PID 0x1009
+  - id: "5151/4105"
+    deviceLabel: SmartWings Levitate with DUCTECH
+    vendorId: 0x141F
+    productId: 0x1009
+    deviceProfileName: window-covering-battery
+
+# PID 0x100A
+  - id: "5151/4106"
+    deviceLabel: SmartWings Levitate with DUCTECH
+    vendorId: 0x141F
+    productId: 0x100A
+    deviceProfileName: window-covering-battery
+
+# PID 0x100C
+  - id: "5151/4108"
+    deviceLabel: SmartWings Levitate with DUCTECH
+    vendorId: 0x141F
+    productId: 0x100C
+    deviceProfileName: window-covering-battery
+
+# ----------------------------------------------------------------
+# NOTE: 如需添加新 PID，请参考以下规则：
+#   - TDBU 产品 -> deviceProfileName: window-covering-tdbu-battery
+#   - 单电机产品 -> deviceProfileName: window-covering-battery
+# ----------------------------------------------------------------

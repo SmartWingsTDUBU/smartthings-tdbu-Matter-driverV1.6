@@ -1,0 +1,24 @@
+name: window-covering-battery
+# [FIX-3] Single-motor fallback profile.
+# Used when do_configure detects only 1 WindowCovering endpoint.
+# Contains only the "main" component (no "bottom" component).
+components:
+  - id: main
+    capabilities:
+      - id: windowShade
+        version: 1
+      - id: windowShadePreset
+        version: 1
+      - id: windowShadeLevel
+        version: 1
+      - id: battery
+        version: 1
+      - id: firmwareUpdate
+        version: 1
+      - id: refresh
+        version: 1
+    categories:
+      - name: Blind
+preferences:
+  - preferenceId: reverse
+    explicit: true
